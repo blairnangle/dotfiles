@@ -1,0 +1,19 @@
+# Navigation
+
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+
+# Networking
+
+alias ip="curl icanhazip.com"
+alias ports="lsof -PiTCP -sTCP:LISTEN"
+alias allports="sudo lsof -PiTCP -sTCP:LISTEN"
+
+
+# AWS
+
+alias awsp="aws --profile"

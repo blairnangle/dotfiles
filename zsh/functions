@@ -1,0 +1,27 @@
+# Enables the opening of Visual Studio Code from the terminal
+# "code" opens Code
+# "code ." opens the current directory in Code
+# "code filename" opens filename
+function code {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        local argPath="$1"
+        [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+        touch $argPath
+        open -a "Visual Studio Code" "$argPath"
+    fi
+}
+
+
+# Grep for active processes
+psgrep() {
+    if [ ! -z $1 ] ;
+    then
+        echo "Grepping for processes matching '$1'…"
+        ps aux | grep $1 | grep -v grep
+    else
+        echo "You need to provide an argument for which I can grep!"
+    fi
+}
