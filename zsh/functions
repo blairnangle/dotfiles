@@ -1,7 +1,7 @@
 # Enables the opening of Visual Studio Code from the terminal
 # "code" opens Code
 # "code ." opens the current directory in Code
-# "code filename" opens filename
+# "code filename" opens filename in Code
 function code {
     if [[ $# = 0 ]]
     then
