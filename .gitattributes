@@ -1,2 +1,0 @@
-bn_profile filter=git-crypt diff=git-crypt
-zsh_profile filter=git-crypt diff=git-crypt

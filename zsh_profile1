@@ -1,0 +1,42 @@
+#@IgnoreInspection BashAddShebang
+source /Users/blairnangle/dotfiles/zsh/functions
+source /Users/blairnangle/dotfiles/bn_profile
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/blairnangle/.oh-my-zsh
+
+# Path to Golang workspace
+export GOPATH=$HOME/gocode
+
+# Sapien deploy tool
+export PATH="${PATH}":~/sapien-health/deploy
+
+ZSH_THEME="wezm"
+
+plugins=(git)
+
+source ${ZSH}/oh-my-zsh.sh
+
+# Source my own alias file after sourcing oh-my-zsh to allow my aliases to overwrite any oh-my-zsh aliases with the same names
+source /Users/blairnangle/dotfiles/zsh/aliases
+
+# Adds yellow timestamp (dd/mm/yy, 24-hour) to prompt
+PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%K:%M:%S}] '${PROMPT}
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
+
+complete -o nospace -C /usr/local/bin/consul consul
+
+complete -o nospace -C /usr/local/bin/nomad nomad
+
+# Use Python 3 by default
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
+
+# Maintain the ability to use Python 2
+alias python2=/usr/bin/python
+alias pip2=/usr/local/bin/pip
