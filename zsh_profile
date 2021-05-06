@@ -40,3 +40,13 @@ alias pip=/usr/local/bin/pip3
 # Maintain the ability to use Python 2
 alias python2=/usr/bin/python
 alias pip2=/usr/local/bin/pip
+
+# Android development
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Access to functions in personal "tools" project
+export PATH=$PATH:~/personal/tools
