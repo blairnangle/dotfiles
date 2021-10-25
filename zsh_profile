@@ -50,3 +50,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Access to functions in personal "tools" project
 export PATH=$PATH:~/personal/tools
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/blairnangle/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/blairnangle/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/blairnangle/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/blairnangle/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
