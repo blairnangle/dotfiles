@@ -1,5 +1,0 @@
-bn_function() {
-    (cd /Users/blairnangle/blairnangle-dot-com/blairnangle-dot-com-meta/scripts && ./bn "$@")
-}
-
-alias bn=bn_function;
