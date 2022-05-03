@@ -22,4 +22,4 @@ alias pwdcp="pwd | pbcopy"
 # Git
 alias gcm="git commit --message"
 alias gd="git diff -- ':!package-lock.json' ':!yarn.lock' ':!ios/Podfile.lock'"
-alias gdc="git diff --cached -- ':!package-lock.json' ':!yarn.lock' ':!ios/Podfile.lock'"
+alias gdc="git diff --cached -- ':!package-lock.json' ':!yarn.lock' ':!ios/Podfile.lock' :!gradle/dependency-locks/compileClasspath.lockfile'"
