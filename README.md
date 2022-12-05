@@ -17,3 +17,7 @@ $ ln -s dotfiles/zsh_profile ~/.zshrc
 
 Until the absolute paths in `zsh_profile` are replaced with relative ones, the paths will need to be changed after
 setting up a new machine.
+
+## License
+
+Distributed under an [MIT License](./LICENSE).
