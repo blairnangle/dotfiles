@@ -7,6 +7,7 @@ alias .....="cd ../../../.."
 
 # Networking
 alias ip="curl ipv4.icanhazip.com"
+alias copyip="ip | pbcopy"
 alias ports="lsof -PiTCP -sTCP:LISTEN"
 alias allports="sudo lsof -PiTCP -sTCP:LISTEN"
 
@@ -16,8 +17,8 @@ alias awsp="aws --profile"
 # grep history
 alias gh="history | grep"
 
-# copy pwd to clipboard
-alias pwdcp="pwd | pbcopy"
+# Copy pwd to clipboard
+alias copypwd="pwd | pbcopy"
 
 # Git
 alias gcm="git commit --message"

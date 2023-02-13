@@ -1,0 +1,41 @@
+function ij() {
+  open -na "IntelliJ IDEA.app" --args "$@"
+}
+
+function code {
+  if [[ $# = 0 ]]; then
+    open -a "Visual Studio Code"
+  else
+    local argPath="$1"
+    [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+    touch "$argPath"
+    open -a "Visual Studio Code" "$argPath"
+  fi
+}
+
+function psgrep() {
+  if [ -n "$1" ]; then
+    echo "Grepping for processes matching '$1'…"
+    pgrep "$1"
+  else
+    echo "You need to provide an argument for which I can grep!"
+  fi
+}
+
+function delete_branch() {
+  echo -e "Deletes a branch both locally and remotely or prunes local reference if it has already been deleted from remote\n"
+
+  echo -e "Assumes \"origin\" as remote alias\n"
+
+  git push -d origin "${1}"
+  git branch -d "${1}"
+  git branch -r --delete origin/"${1}"
+}
+
+function logs() {
+  if [ -n "$AWS_PROFILE" ]; then
+    saw "$1" /aws/elasticbeanstalk/api-"$2"/var/log/eb-docker/containers/eb-current-app/stdouterr.log "${@:3}"
+  else
+    echo "AWS_PROFILE is not set - set it to the environment you want to view logs for"
+  fi
+}

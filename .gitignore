@@ -1,8 +1,8 @@
-## Persist IntelliJ dictionaries, ignore everything else
+# Persist IntelliJ dictionaries, ignore everything else
 !.idea/dictionaries/*
 .idea/*.xml
 .idea/*.iml
 .idea/codeStyles
 
-## macOS directory metadata
+# macOS directory metadata
 .DS_Store

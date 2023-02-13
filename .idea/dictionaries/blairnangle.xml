@@ -4,11 +4,15 @@
       <w>allports</w>
       <w>awsp</w>
       <w>bashcompinit</w>
+      <w>copyip</w>
+      <w>copypwd</w>
+      <w>envman</w>
       <w>gocode</w>
       <w>icanhazip</w>
       <w>libexec</w>
       <w>nospace</w>
       <w>pbcopy</w>
+      <w>psgrep</w>
       <w>pwdcp</w>
       <w>wezm</w>
     </words>

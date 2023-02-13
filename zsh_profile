@@ -2,29 +2,30 @@
 
 USERNAME=blairnangle
 
-source /Users/${USERNAME}/dotfiles/zsh/functions
+# shellcheck source=/Users/${USERNAME}/dotfiles/functions
+source /Users/${USERNAME}/dotfiles/functions
 
-# If you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation
 export ZSH=/Users/${USERNAME}/.oh-my-zsh
 
 # Path to Golang workspace
 export GOPATH=$HOME/gocode
 
-ZSH_THEME="wezm"
-
-plugins=(git)
+export plugins=(
+  git
+  zsh-autosuggestions
+)
 
 source ${ZSH}/oh-my-zsh.sh
 
 # Source my own alias file after sourcing oh-my-zsh to allow my aliases to overwrite any oh-my-zsh aliases with the same names
-source /Users/${USERNAME}/dotfiles/zsh/aliases
+# shellcheck source=/Users/${USERNAME}/dotfiles/aliases
+source /Users/${USERNAME}/dotfiles/aliases
 
-# Adds yellow timestamp (dd/mm/yy, 24-hour) to prompt
-PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%K:%M:%S}] '${PROMPT}
-
+# Needed for autocomplete
 autoload -U +X bashcompinit && bashcompinit
 
 # Enable pyenv
@@ -32,8 +33,8 @@ eval "$(pyenv init -)"
 PATH="$(pyenv root)/shims:$PATH"
 
 # Use pyenv-installed Python 3 by default
-alias python=/Users/${USERNAME}/.pyenv/shims/python3
-alias pip=/Users/${USERNAME}/.pyenv/shims/pip3
+alias python='/Users/${USERNAME}/.pyenv/shims/python3'
+alias pip='/Users/${USERNAME}/.pyenv/shims/pip3'
 
 # Maintain the ability to use Python 2
 alias python2=/usr/bin/python
@@ -46,29 +47,22 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Access to functions in personal "tools" project
-export PATH=$PATH:~/personal/tools
+# The next line updates PATH for the Google Cloud SDK
+# shellcheck source=/Users/${USERNAME}/Downloads/google-cloud-sdk/path.zsh
+if [ -f "/Users/${USERNAME}/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/${USERNAME}/Downloads/google-cloud-sdk/path.zsh.inc"; fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/${USERNAME}/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/${USERNAME}/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/${USERNAME}/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/${USERNAME}/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# The next line enables shell command completion for gcloud
+# shellcheck source=/Users/${USERNAME}/Downloads/google-cloud-sdk/completion.zsh.inc
+if [ -f "/Users/${USERNAME}/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/${USERNAME}/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-# Anaconda initialisation
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/${USERNAME}/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/${USERNAME}/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/${USERNAME}/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/${USERNAME}/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+source /Users/blairnangle/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# Use Starship prompt
+eval "$(starship init zsh)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
