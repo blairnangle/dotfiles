@@ -4,5 +4,5 @@
 .idea/*.iml
 .idea/codeStyles
 
-# macOS directory metadata
-.DS_Store
+# zsh backup
+zsh_profile.backup

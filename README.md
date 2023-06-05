@@ -6,8 +6,19 @@ I wrote a [blog post](https://blairnangle.com/blog/dotfiles) explaining some of 
 
 ## Setup
 
+### Most things
+
 ```shell
 ./set-up.sh
+```
+
+### Global gitignore
+
+Add the following to `~/.gitconfig`:
+
+```gitconfig
+[core]
+  excludesfile = ~/.gitignore_global
 ```
 
 ## License
