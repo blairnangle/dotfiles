@@ -8,6 +8,14 @@ I wrote a [blog post](https://blairnangle.com/blog/dotfiles) explaining some of 
 
 ### Most things
 
+Pre-requisites:
+
+- brew
+- docker (install using brew)
+- pyenv (install using brew)
+- nvm and Node.js - see [the docs](https://heynode.com/tutorial/install-nodejs-locally-nvm/)
+- github-copilot-cli alias (`npm -g i @githubnext/github-copilot-cli`)
+
 ```shell
 ./set-up.sh
 ```
