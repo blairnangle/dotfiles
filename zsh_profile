@@ -28,7 +28,7 @@ source /Users/${USERNAME}/dotfiles/aliases
 autoload -U +X bashcompinit && bashcompinit
 
 # Enable pyenv
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 PATH="$(pyenv root)/shims:$PATH"
 
 # Use pyenv-installed Python 3 by default
