@@ -21,6 +21,9 @@ source ${ZSH}/oh-my-zsh.sh
 # shellcheck source=/Users/${USERNAME}/dotfiles/aliases
 source /Users/${USERNAME}/dotfiles/aliases
 
+# access Management scripts from anywhere
+export PATH=$PATH:/Users/${USERNAME}/kevel/teammgmt/bin
+
 # Needed for autocomplete
 autoload -U +X bashcompinit && bashcompinit
 
