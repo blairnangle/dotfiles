@@ -8,5 +8,10 @@ error_symbol = '[✗](bold red) '
 [directory]
 truncate_to_repo = false
 
+[time]
+disabled = false
+# see https://docs.rs/chrono/latest/chrono/format/strftime/index.html
+time_format = '%T, %F'
+
 [gcloud]
 disabled = true
