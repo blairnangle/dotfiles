@@ -31,11 +31,3 @@ function delete_branch() {
   git branch -d "${1}"
   git branch -r --delete origin/"${1}"
 }
-
-function logs() {
-  if [ -n "$AWS_PROFILE" ]; then
-    saw "$1" /aws/elasticbeanstalk/api-"$2"/var/log/eb-docker/containers/eb-current-app/stdouterr.log "${@:3}"
-  else
-    echo "AWS_PROFILE is not set - set it to the environment you want to view logs for"
-  fi
-}
