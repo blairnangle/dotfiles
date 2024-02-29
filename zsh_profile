@@ -55,8 +55,8 @@ export NVM_DIR="$HOME/.nvm"
 # Use Starship prompt
 eval "$(starship init zsh)"
 
-# Use recommended GitHub Copilot CLI aliases
-eval "$(github-copilot-cli alias -- "$0")"
-
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# Configure Homebrew for macOS Silicon
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
