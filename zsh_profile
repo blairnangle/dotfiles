@@ -30,6 +30,9 @@ export PATH=$PATH:/Users/${USERNAME}/kevel/infrastructure/scripts
 # access teamengines scripts from anywhere
 export PATH=$PATH:/Users/${USERNAME}/kevel/teamengines/bin
 
+# access ah script from anywhere
+export PATH=$PATH:/Users/${USERNAME}/kevel/ah/bin
+
 # Needed for autocomplete
 autoload -U +X bashcompinit && bashcompinit
 
