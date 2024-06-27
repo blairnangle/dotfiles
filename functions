@@ -31,3 +31,17 @@ function delete_branch() {
   git branch -d "${1}"
   git branch -r --delete origin/"${1}"
 }
+
+function rename_extension() {
+  # check if the input file and new extension are provided
+  if [ $# -ne 2 ]; then
+    echo "Usage: $0 <file> <new_extension>"
+    exit 1
+  fi
+
+  filename="$1"
+  new_extension="$2"
+
+  # Rename the file extension
+  mv "$filename" "${filename%.*}.$new_extension"
+}
