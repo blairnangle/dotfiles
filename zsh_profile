@@ -27,6 +27,9 @@ export PATH=$PATH:/Users/${USERNAME}/kevel/teammgmt/bin
 # access infrastructure scripts from anywhere
 export PATH=$PATH:/Users/${USERNAME}/kevel/infrastructure/scripts
 
+# access PACS from anywhere
+export PATH=$PATH:/Users/${USERNAME}/kevel/pacs/scripts
+
 # access teamengines scripts from anywhere
 export PATH=$PATH:/Users/${USERNAME}/kevel/teamengines/bin
 
