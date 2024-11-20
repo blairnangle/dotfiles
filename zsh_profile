@@ -64,6 +64,9 @@ eval "$(starship init zsh)"
 # Configure Homebrew for macOS Silicon
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+# aws configure will not actually set $AWS_DEFAULT_REGION which is required for some commands
+export AWS_DEFAULT_REGION=us-east-1
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
