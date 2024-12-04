@@ -15,7 +15,7 @@ alias allports="sudo lsof -PiTCP -sTCP:LISTEN"
 alias awsp="aws --profile"
 
 # grep history
-alias greph="history -f | grep"
+alias greph="history -i | grep"
 
 # Copy pwd to clipboard
 alias copypwd="pwd | pbcopy"
